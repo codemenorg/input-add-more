@@ -1,0 +1,24 @@
+{
+  "name": "input-add-more",
+  "version": "1.0.1",
+  "description": "This is an add more input jquery plugin for a form",
+  "main": "dist/input-add-more.js",
+  "homepage": "https://codemen.org",
+  "author": "codemen",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codemenorg/input-add-more"
+  },
+  "keywords": [
+    "multi",
+    "input",
+    "add",
+    "more",
+    "jquery-plugin",
+    "ecosystem:jquery"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.4"
+  }
+}
