@@ -3,7 +3,29 @@
 ## **Introduction**
 MultiItem is a jquery script that allows you to add multiple input or others with extensive customization
 
-######Multi item wrapper
+###### How to Use
+Inlude the script
+`<link rel="stylesheet" href="path/to/flie/style.css">`
+`<script src="path/to/flie/multiitem.js"></script>`
+
+Call the script
+```
+$(document).ready(function () {
+    $('.multi-element').multiitems({
+        template: `
+        <div>
+            <input class="multi-input" data-key="first_name" name="" type="text" value="">
+        </div>
+        <div>
+            <input class="multi-input" data-key="last_name" name="" type="text" value="">
+        </div>
+        `
+    });
+});
+```
+If you take a look carefully, we have not added `single-element` class or the `remove` or `sort` in the template. Those will be added automatically. We only added the core part with the `input wrapper` of the template also without the name of input field.
+
+###### Multi item wrapper
 ```
 <div class="multi-element" data-input="items">
 
@@ -13,7 +35,7 @@ MultiItem is a jquery script that allows you to add multiple input or others wit
 
 </div>
 ```
-######single element with remove button
+###### Single element with remove button
 ```
 <div class="single-element">
     <div>
@@ -28,7 +50,7 @@ MultiItem is a jquery script that allows you to add multiple input or others wit
 </div>
 ```
 
-######single element with sortable button.
+###### Single element with sortable button.
 ```
 <div class="single-element">
     <div>
@@ -49,7 +71,7 @@ MultiItem is a jquery script that allows you to add multiple input or others wit
 </div>
 ```
 
-######So, your structure must be like this
+###### So, your structure must be like this
 You are not allowed to break the format at all. but you can add classes to those `tags` to customize. Also in the `input` container `div`, you can add extra elements if you need.
 ```
 <div class="multi-element" data-input="items">
@@ -79,7 +101,7 @@ You are not allowed to break the format at all. but you can add classes to those
 	</div>
 </div>
 ```
-######Dropdown field
+###### Dropdown field
 If you want to add a `dropdown` for a field the format wil be like it is given below
 ```
 <div class="multi-element" data-input="items">
@@ -109,29 +131,7 @@ If you want to add a `dropdown` for a field the format wil be like it is given b
 ```
 So, you can see, the `id` of first `ul` is placed in the first `p` tag's `data-id`, and second one is for second `p`. the `input` field is hidden there
 
-######How to call
-Inlude the script
-`<link rel="stylesheet" href="path/to/flie/style.css">`
-`<script src="path/to/flie/multiitem.js"></script>`
-
-Call the script
-```
-$(document).ready(function () {
-    $('.multi-element').multiitems({
-        template: `
-        <div>
-            <input class="multi-input" data-key="first_name" name="" type="text" value="">
-        </div>
-        <div>
-            <input class="multi-input" data-key="last_name" name="" type="text" value="">
-        </div>
-        `
-    });
-});
-```
-If you take a look carefully, we have not added `single-element` class or the `remove` or `sort` in the template. Those will be added automatically. We only added the core part with the `input wrapper` of the template also without the name of input field.
-
-######Options
+###### Options
 |Option|Default Value|Required|Uses|
 |------|-------------|--------|----|
 |template|null|Yes|This is the template that will be sorted, added or removed|
@@ -148,7 +148,7 @@ If you take a look carefully, we have not added `single-element` class or the `r
 |max|0|No|Integer value. If 0, you can add unlimited item or put a positive integer to limit the adding|
 |externalFunction|null|No|call an external function on add item. value type must be array and maximum 2 items where first item is function name and second item (optional) is true/false. if true then multiitem returns the added dom|
 
-######Some Classes
+###### Some Classes
 `.single-element .full-width` - makes the child `div` of `.single-element` full width
 
 `.single-element .half-width` - makes the child `div` of `.single-element` half width
@@ -180,10 +180,10 @@ If you take a look carefully, we have not added `single-element` class or the `r
 ## **Range**
 range is a jquery script extended from multiitem.js that allows you to add multiple input or others with extensive customization for range purpose like grading system. It works exactly like multiitem but some options are not available and the single-element section is little different as it doesn't have max, inversing, remove disabling and sortable option. Also custom dropdown option is unavailable. For everything else follow the doc of multi item
 
-######Options that are not available
+###### Options that are not available
 `moveUpButtonClass`, `moveDownButtonClass`, `inverse`, `insertable`, `removable`, `max`, `externalFunction`
 
-######How to call
+###### How to Use
 Inlude the script
 `<link rel="stylesheet" href="path/to/flie/style.css">`
 `<script src="path/to/flie/percent-range.js"></script>`
@@ -204,7 +204,7 @@ $(document).ready(function () {
 });
 ```
 
-######single element with remove button
+###### Single element with remove button
 ```
 <div class="single-element">
     <div class="half-width">
@@ -220,5 +220,5 @@ $(document).ready(function () {
 ```
 
 
-######Some Classes
+###### Some Classes
 `.disabled-button` - it is used to disable buttons if min, max fields doesn't contain integer
