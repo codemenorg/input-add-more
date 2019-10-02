@@ -1,6 +1,6 @@
 {
   "name": "input-add-more",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This is an add more input jquery plugin for a form",
   "main": "dist/input-add-more.js",
   "homepage": "https://codemen.org",

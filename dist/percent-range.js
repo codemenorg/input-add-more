@@ -37,8 +37,9 @@
             $this.find('.single-element').last().find('.max').val(100)
             rearrangeItem($this.find('.single-element').last());
 
-            $this.each(function () {
+            $this.find('.single-element').each(function () {
                 var item = $(this);
+                minItem(item.find('.min'))
                 maxItem(item.find('.max'))
                 rearrangeItem(item);
             })
