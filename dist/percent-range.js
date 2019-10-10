@@ -1,5 +1,5 @@
 /*!
-*  - v1.0.0
+*  - v1.0.3
 * Homepage: http://codemen.org
 * Author: Codemen
 * Author URL:  http://codemen.org
@@ -214,5 +214,29 @@
 
             return !$.isNumeric(value) || decimalError > 1 || Math.ceil(value)===false || Math.ceil(value) != Math.floor(value) ? false : true
         }
+
+        $(document).on('click','p.single-unit', function(e){
+            if(options.delay==0) {
+                e.stopPropagation();
+                $('ul.select-dropdown').hide();
+                if ($(this).data('id')) {
+                    $(this).parent().append($('#' + $(this).data('id')))
+                    $('#' + $(this).data('id')).show();
+                }
+            }
+        })
+        $(document).on('click','ul.select-dropdown li', function(e){
+            if(options.delay==0) {
+                e.stopPropagation();
+                $(this).parent().siblings('input').val($(this).children('input').val());
+                $(this).parent().siblings('p').html($(this).children('span').html());
+                $(this).parent().hide();
+            }
+        })
+        $(document).on('click','body', function(){
+            if(options.delay==0) {
+                $('ul.select-dropdown').hide();
+            }
+        })
     }
 })(jQuery);
